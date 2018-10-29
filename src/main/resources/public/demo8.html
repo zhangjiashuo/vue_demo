@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>v-model</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<form>
+				账号:<input type="text" name="username" v-model="user.username">
+				密码:<input type="text" name="password" v-model="user.password">
+				<input type="button" value="获取" @click="fun">
+			</form>
+		</div>
+	</body>
+	<script>
+		//view model
+		new Vue({
+			el:"#app",
+			data:{
+			    user:{
+			        username:"",
+					password:""
+				}
+			},
+			methods:{
+			    fun:function () {
+                    alert(this.user.username+" "+this.user.password);
+                    this.user.username="tom";
+                    this.user.password="11111111";
+                }
+			}
+		})
+	</script>
+
+</html>
